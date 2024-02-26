@@ -74,3 +74,46 @@ const initApp = () => {
 }
 
 initApp();
+
+// function adding to card
+const addToCard = (key) => {
+    if (listCards[key] === null) {
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+    }
+
+    reloadCard()
+}
+const reloadCard = () => {
+    listCards.innerHTML = "";
+    let count = 0;
+    let totalPrice = 0;
+
+    listCards.forEach((value, key) => {
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+
+        if (value !== null) {
+            let newDiv = document.createElement("li");
+            newDiv.innerHTML = `
+            <div></div><img src ="${value.images}"></div>
+            <div class ="cardTitle">${value.name}</div>
+            <div class="cardPrice">${value.price.toLocaleString()}</div>
+
+            <div>
+                <button style="background-color: blueviolet"
+                class="cardButton" conClick = "changeQuantity(${key})"
+                value = ${value.quantity - 1}"">-</button>
+
+                <button style="background-color: blueviolet"
+                class="cardButton" conClick = "changeQuantity(${key})"
+                value = ${value.quantity + 1}"">+</button>
+            </div>
+            `
+            listCard.appendChild(newDiv);
+        }
+
+        total.innerText = totalPrice.toLocaleString();
+        quantity.innerText = count;
+    })
+}
