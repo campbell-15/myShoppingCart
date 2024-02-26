@@ -21,13 +21,13 @@ let products = [
     {
         id: 1,
         name: "PRODUCT 1",
-        images: "./images/jacket1.jpeg",
+        images: "./images/jacket2.jpeg",
         price: 2000
     },
     {
         id: 2,
         name: "PRODUCT 2",
-        images: "./images/jacket2.jpeg",
+        images: "./images/jacket1.jpeg",
         price: 1500
     },
     {
@@ -66,7 +66,7 @@ const initApp = () => {
             <img src ="${value.images}">
             <div class ="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
-            <button onClick="addToCard(${key})"Add To Card</button>
+            <button onClick="addToCard(${key})">Add To Cart</button>
         `
         list.appendChild(newDiv);
     })
