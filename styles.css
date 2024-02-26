@@ -165,38 +165,44 @@ body {
     color: #efefef;
 }
 
-.listCard li {
+.list-card li {
     display: grid;
-    grid-template-columns: 100px repeat(3, 1fr);
-    color: #fff;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+    color: #1c1f25;
     row-gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
 
-.listCard li div {
+.list-card li div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.listCard li img {
-    width: 90%;
+.list-card li img {
+    width: 80px; /* Adjust the width of the image */
+    height: auto; /* Let the height adjust proportionally */
+    border-radius: 8px;
 }
 
-.listCard .count {
+.list-card .count {
     margin: 0px 10px;
     color: #1c1f25;
 }
 
 .cardTitle,
 .cardPrice {
+    margin: 0;
     color: #1c1f25;
 }
 
 .cardButton {
-    width: 28px;
-    height: 28px;
+    width: 24px; /* Adjust the width of the buttons */
+    height: 24px;
     color: #efefef;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     border-radius: 50%;
     display: flex;
