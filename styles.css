@@ -146,3 +146,21 @@ body {
 .list .item:hover .price {
     color: #efefef;
 }
+
+.list .item button {
+    background-color: #efefef;
+    color: blueviolet;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    border: 3px solid blueviolet;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.list .item button:hover {
+    background-color: rgb(94, 47, 138);
+    color: #efefef;
+}
