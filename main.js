@@ -16,42 +16,42 @@ closeShopping.addEventListener("click", () => {
     body.classList.remove("active")
 })
 
-// array of product info and names
+// array of product objects info and names
 let products = [
     {
         id: 1,
         name: "PRODUCT 1",
-        images: "1.PNG",
+        images: "./images/jacket1.jpeg",
         price: 2000
     },
     {
         id: 2,
         name: "PRODUCT 2",
-        images: "2.PNG",
+        images: "./images/jacket2.jpeg",
         price: 1500
     },
     {
         id: 3,
         name: "PRODUCT 3",
-        images: "3.PNG",
+        images: "./images/jacket3.jpeg",
         price: 1000
     },
     {
         id: 4,
         name: "PRODUCT 4",
-        images: "4.PNG",
+        images: "./images/jacket4.jpeg",
         price: 1800
     },
     {
         id: 5,
         name: "PRODUCT 5",
-        images: "5.PNG",
+        images: "./images/jacket5.webp",
         price: 2200
     },
     {
         id: 6,
         name: "PRODUCT 6",
-        images: "6.PNG",
+        images: "./images/jacket6.webp",
         price: 1200
     },
 ]
@@ -63,7 +63,7 @@ const initApp = () => {
         let newDiv = document.createElement ("div");
         newDiv.classList.add("item");
         newDiv.innerHTML = `
-            <img src ="img/${value.images}">
+            <img src ="${value.images}">
             <div class ="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
             <button onClick="addToCard(${key})"Add To Card</button>
