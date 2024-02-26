@@ -16,7 +16,7 @@ closeShopping.addEventListener("click", () => {
     body.classList.remove("active")
 })
 
-// array of product objects info and names
+// create array of product objects info and names
 let products = [
     {
         id: 1,
@@ -58,6 +58,7 @@ let products = [
 
 let listCards = [];
 
+// list each card and create it from array values
 const initApp = () => {
     products.forEach((value, key) => {
         let newDiv = document.createElement ("div");
