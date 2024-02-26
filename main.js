@@ -20,37 +20,37 @@ closeShopping.addEventListener("click", () => {
 let products = [
     {
         id: 1,
-        name: "PRODUCT 1",
+        name: "HAPPY JACKET",
         images: "./images/jacket2.jpeg",
         price: 2000
     },
     {
         id: 2,
-        name: "PRODUCT 2",
+        name: "GROOVY JACKET",
         images: "./images/jacket1.jpeg",
         price: 1500
     },
     {
         id: 3,
-        name: "PRODUCT 3",
+        name: "VINTAGE SQUARE JACKET",
         images: "./images/jacket3.jpeg",
         price: 1000
     },
     {
         id: 4,
-        name: "PRODUCT 4",
+        name: "DESERT JACKET",
         images: "./images/jacket4.jpeg",
         price: 1800
     },
     {
         id: 5,
-        name: "PRODUCT 5",
+        name: "SUNSET JACKET",
         images: "./images/jacket5.webp",
         price: 2200
     },
     {
         id: 6,
-        name: "PRODUCT 6",
+        name: "OCEAN HAPPY JACKET",
         images: "./images/jacket6.webp",
         price: 1200
     },
