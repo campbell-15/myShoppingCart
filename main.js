@@ -101,10 +101,10 @@ const reloadCard = () => {
             <div class="cardPrice">${value.price.toLocaleString()}</div>
 
             <div>
-                <button style="background-color: blueviolet"
+                <button style="background-color: #006d77"
                 class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
                 <div class ="count">${count}</div>
-                <button style="background-color: blueviolet"
+                <button style="background-color: #006d77"
                 class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
             </div>
             `
