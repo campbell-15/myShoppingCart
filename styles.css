@@ -1,3 +1,6 @@
+/* dark #006d77 */
+/* light color #83c5be */
+
 body {
     background-color: #efefef;
     font-family: 'Montserrat', sans-serif;
@@ -10,7 +13,7 @@ body {
 }
 
 .container h1 {
-    color: blueviolet;
+    color: #006d77;
 }
 
 .container header {
@@ -26,13 +29,13 @@ body {
 
 .shopping i {
     font-size: 3rem;
-    color: blueviolet;
+    color: #006d77;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
 .shopping i:hover {
-    color: rgb(94, 47, 138);
+    color: #83c5be;
 }
 
 .shopping span {
