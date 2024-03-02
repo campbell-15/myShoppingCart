@@ -81,14 +81,17 @@ const initApp = () => {
 initApp();
 
 // function adding to card
+// This function adds a product to the shopping cart
 const addToCard = (key) => {
     if (listCards[key] === undefined) {
         listCards[key] = JSON.parse(JSON.stringify(products[key]));
         listCards[key].quantity = 1;
     }
 
-    reloadCard()
+    reloadCard() // Reloads the shopping cart display
 }
+
+// This function reloads the shopping cart display
 const reloadCard = () => {
     listCard.innerHTML = "";
     let count = 0;
@@ -96,7 +99,7 @@ const reloadCard = () => {
 
     listCards.forEach((value, key) => {
         totalPrice = totalPrice + value.price;
-        count = count + value.quantity;
+        count = value.quantity;
 
         if (value != null) {
             let newDiv = document.createElement("li");
@@ -121,6 +124,7 @@ const reloadCard = () => {
     })
 }
 
+// This function changes the quantity of a product in the shopping cart
 const changeQuantity = (key, quantity) => {
     if (quantity === 0) {
         delete listCards[key]
