@@ -128,7 +128,6 @@ const reloadCard = () => {
 
 // change the quantity of a product in the shopping cart 
 const changeQuantity = (key, quantityChange) => {
-    let currentQuantity = listCards[key].quantity;
 
     // Update the quantity by adding the change in quantity
     listCards[key].quantity += quantityChange;
