@@ -67,13 +67,14 @@ const initApp = () => {
     products.forEach((value, key) => {
         let newDiv = document.createElement ("div");
         newDiv.classList.add("item");
+        // Creating HTML structure for each product card
         newDiv.innerHTML = `
             <img src ="${value.images}">
             <div class ="title">${value.name}</div>
             <div class="price">${value.price.toLocaleString()}</div>
             <button onClick="addToCard(${key})">Add To Cart</button>
         `
-        list.appendChild(newDiv);
+        list.appendChild(newDiv); // Add the newly created card to the list
     })
 }
 
