@@ -99,7 +99,7 @@ const reloadCard = () => {
 
     listCards.forEach((value, key) => {
         totalPrice = totalPrice + value.price;
-        count = value.quantity;
+        count = count + value.quantity;
 
         if (value != null) {
             let newDiv = document.createElement("li");
@@ -111,7 +111,7 @@ const reloadCard = () => {
             <div>
                 <button style="background-color: #006d77"
                 class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                <div class ="count">${count}</div>
+                <div class ="count">${value.quantity}</div>
                 <button style="background-color: #006d77"
                 class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
             </div>
@@ -124,13 +124,13 @@ const reloadCard = () => {
     })
 }
 
-// This function changes the quantity of a product in the shopping cart
+// change the quantity of a product in the shopping cart 
 const changeQuantity = (key, quantity) => {
     if (quantity === 0) {
         delete listCards[key]
     }
     else {
-        listCards[key].quantity = quantity;
+        listCards[key].quantity = quantity - 2;
         listCards[key].price = quantity * products[key].price
     }
 
