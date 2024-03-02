@@ -94,33 +94,37 @@ const addToCard = (key) => {
 // This function reloads the shopping cart display
 const reloadCard = () => {
     listCard.innerHTML = "";
-    let count = 0;
-    let totalPrice = 0;
+    let totalCount = 0; // Initialize total count of products
+    let totalPrice = 0; // Initialize total price
 
     listCards.forEach((value, key) => {
-        totalPrice = totalPrice + value.price;
-        count = count + value.quantity;
-
         if (value != null) {
+            // Calculate the total price by multiplying the product price by its quantity
+            totalPrice += value.price * value.quantity;
+            // Update the total count of products
+            totalCount += value.quantity;
+
             let newDiv = document.createElement("li");
             newDiv.innerHTML = `
             <div><img src ="${value.images}"></div>
             <div class ="cardTitle">${value.name}</div>
-            <div class="cardPrice">${value.price.toLocaleString()}</div>
+            <div class="cardPrice">${(value.price * value.quantity).toLocaleString()}</div>
 
             <div>
-                    <button style="background-color: #006d77" class="cardButton decrement" data-key="${key}">-</button>
+                <button style="background-color: #006d77" class="cardButton decrement" data-key="${key}">-</button>
                 <div class="count">${value.quantity}</div>
-                    <button style="background-color: #006d77" class="cardButton increment" data-key="${key}">+</button>
+                <button style="background-color: #006d77" class="cardButton increment" data-key="${key}">+</button>
             </div>
             `
             listCard.appendChild(newDiv);
         }
+    });
 
-        total.innerText = totalPrice.toLocaleString();
-        quantity.innerText = count;
-    })
+    // Update the total price and quantity displayed in the cart
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = totalCount;
 }
+
 
 // change the quantity of a product in the shopping cart 
 const changeQuantity = (key, quantityChange) => {
