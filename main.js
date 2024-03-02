@@ -109,11 +109,9 @@ const reloadCard = () => {
             <div class="cardPrice">${value.price.toLocaleString()}</div>
 
             <div>
-                <button style="background-color: #006d77"
-                class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                <div class ="count">${value.quantity}</div>
-                <button style="background-color: #006d77"
-                class="cardButton" onClick = "changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                    <button style="background-color: #006d77" class="cardButton decrement" data-key="${key}">-</button>
+                <div class="count">${value.quantity}</div>
+                    <button style="background-color: #006d77" class="cardButton increment" data-key="${key}">+</button>
             </div>
             `
             listCard.appendChild(newDiv);
@@ -125,14 +123,27 @@ const reloadCard = () => {
 }
 
 // change the quantity of a product in the shopping cart 
-const changeQuantity = (key, quantity) => {
-    if (quantity === 0) {
-        delete listCards[key]
-    }
-    else {
-        listCards[key].quantity = quantity - 2;
-        listCards[key].price = quantity * products[key].price
-    }
+const changeQuantity = (key, quantityChange) => {
+    let currentQuantity = listCards[key].quantity;
 
-    reloadCard()
+    // Ensure the quantity is at least 1
+    if (currentQuantity + quantityChange >= 1) {
+        listCards[key].quantity += quantityChange;
+        reloadCard(); // Reload the shopping cart display
+    }
 }
+
+// Listen for click events on the document and delegate them to the appropriate handlers
+document.addEventListener('click', function(event) {
+    // If the clicked element is a decrement button
+    if (event.target.classList.contains('decrement')) {
+        const key = event.target.dataset.key;
+        changeQuantity(key, -1); // Decrease the quantity by 1
+    }
+    // If the clicked element is an increment button
+    else if (event.target.classList.contains('increment')) {
+        const key = event.target.dataset.key;
+        changeQuantity(key, 1); // Increase the quantity by 1
+    }
+});
+
