@@ -130,12 +130,17 @@ const reloadCard = () => {
 const changeQuantity = (key, quantityChange) => {
     let currentQuantity = listCards[key].quantity;
 
-    // Ensure the quantity is at least 1
-    if (currentQuantity + quantityChange >= 1) {
-        listCards[key].quantity += quantityChange;
-        reloadCard(); // Reload the shopping cart display
+    // Update the quantity by adding the change in quantity
+    listCards[key].quantity += quantityChange;
+
+    // If the new quantity is 0 or less, remove the item from the list
+    if (listCards[key].quantity <= 0) {
+        delete listCards[key];
     }
+
+    reloadCard(); // Reload the shopping cart display
 }
+
 
 // Listen for click events on the document and delegate them to the appropriate handlers
 document.addEventListener('click', function(event) {
