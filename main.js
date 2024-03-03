@@ -104,6 +104,7 @@ const reloadCard = () => {
             // Update the total count of products
             totalCount += value.quantity;
 
+            // create HTML structure for cart with products
             let newDiv = document.createElement("li");
             newDiv.innerHTML = `
             <div><img src ="${value.images}"></div>
