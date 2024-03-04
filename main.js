@@ -133,12 +133,12 @@ const changeQuantity = (key, quantityChange) => {
     // Update the quantity by adding the change in quantity
     listCards[key].quantity += quantityChange;
 
-    // If the new quantity is 0 or less, remove the item from the list
+    // remove the item from the list if quantity is less than 0
     if (listCards[key].quantity <= 0) {
         delete listCards[key];
     }
 
-    reloadCard(); // Reload the shopping cart display
+    reloadCard();
 }
 
 
