@@ -59,8 +59,7 @@ let products = [
 
 let listCards = [];
 
-// list each card and create it from array values
-// This function initializes the application by creating cards for each product 
+// creat cards for each product 
 const initApp = () => {
     products.forEach((value, key) => {
         let newDiv = document.createElement ("div");
