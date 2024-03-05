@@ -71,7 +71,7 @@ const initApp = () => {
         newDiv.innerHTML = `
             <img src ="${value.images}">
             <div class ="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
+            <div class="price">R ${value.price.toLocaleString()}</div>
             <button onClick="addToCard(${key})">Add To Cart</button>
         `
         list.appendChild(newDiv); // Add the newly created card to the list
