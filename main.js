@@ -8,12 +8,10 @@ const body = document.querySelector("body");
 const quantity = document.querySelector(".quantity");
 
 // Open + close cart
-// When the shopping cart icon is clicked, the shopping cart is opened
 openShopping.addEventListener("click", () => {
     body.classList.add("active")
 })
 
-// When the close button inside the shopping cart is clicked, the cart is closed
 closeShopping.addEventListener("click", () => {
     body.classList.remove("active")
 })
