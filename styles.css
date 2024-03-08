@@ -112,6 +112,11 @@ body {
     color: #fff;
 }
 
+.card .checkOut div:nth-child(3) {
+    background-color: #1c1f25;
+    color: #fff;
+}
+
 .list .item {
     display: flex;
     flex-direction: column;
