@@ -106,7 +106,7 @@ const reloadCard = () => {
             newDiv.innerHTML = `
             <div><img src ="${value.images}"></div>
             <div class ="cardTitle">${value.name}</div>
-            <div class="cardPrice">${(value.price * value.quantity).toLocaleString()}</div>
+            <div class="cardPrice">R ${(value.price * value.quantity).toLocaleString()}</div>
 
             <div>
                 <button style="background-color: #006d77" class="cardButton decrement" data-key="${key}">-</button>
